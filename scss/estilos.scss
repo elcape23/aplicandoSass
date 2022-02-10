@@ -1,0 +1,38 @@
+@import "componentes/header";
+@import "componentes/navegador";
+@import "componentes/main";
+@import "componentes/footer";
+@import "base/variables";
+
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: $fuente-principal;
+}
+
+.contenedor{
+    height: $altura-principal;
+    display: grid;
+    grid-template-areas: "logo nav"
+                         "ppal ppal"
+                         "pie pie";
+    grid-template-rows: 10vh auto 5vh;
+    background: url(/img/background-index.png);
+    background-size: cover;
+    animation-name: contenedor;
+    animation-duration: 4s;
+}
+
+.logoMyle{
+    width: 20%;
+    transition: ease-out 0.5s;
+    animation-name: colorTexto;
+    animation-duration: 3s;
+    &:hover{
+        opacity: 0.5;
+    }
+}
+
+.letraFuerte{
+    font-weight: $grosor-ancho;
+}

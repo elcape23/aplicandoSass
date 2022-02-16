@@ -3,6 +3,9 @@
 @import "componentes/main";
 @import "componentes/footer";
 @import "base/variables";
+@import "base/mapas";
+@import "base/extends";
+@import "base/mixin";
 
 *{
     padding: 0%;
@@ -25,7 +28,7 @@
 
 .logoMyle{
     width: 20%;
-    transition: ease-out 0.5s;
+    @include animaciones;
     animation-name: colorTexto;
     animation-duration: 3s;
     &:hover{
@@ -34,5 +37,5 @@
 }
 
 .letraFuerte{
-    font-weight: $grosor-ancho;
+    font-weight: map-get($map: $grande, $key: fontweight-grande);
 }

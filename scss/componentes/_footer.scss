@@ -1,4 +1,6 @@
 @import "base/variables";
+@import "base/mapas";
+@import "base/extends";
 
 footer{
     grid-area: pie;
@@ -9,16 +11,12 @@ footer{
     animation-duration: 5s;
     ul{
         grid-area: rrss;
-        display: flex;
-        justify-self: right;
-        margin-right: 8vw;
-        list-style: none;
-        align-self: center;
-        transition: ease-out 0.5s;
+        @extend %listaSecundaria;
+        @include animaciones;
         }
         li{
             a{
-                transition: all .2s ease-in-out;
+                @include animaciones;
                 svg{
                     &:hover{
                         opacity: 0.5;
@@ -29,9 +27,9 @@ footer{
     }
     h2{
         grid-area: copy;
-        font-size: $fuente-minima;
-        font-weight: $grosor-fino;
-        align-self: center;
-        color: $color-texto-secundario;
+        font-size: map-get($map: $minimo, $key: fontsize-minimo);
+        font-weight: map-get($map: $minimo, $key: fontweight-minimo);
+        align-self: map-get($map: $chico, $key: alignself-chico);
+        color: map-get($map: $chico, $key:color-chico );
     }
 }
